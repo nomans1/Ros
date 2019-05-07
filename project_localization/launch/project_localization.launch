@@ -8,4 +8,6 @@
         <rosparam file="$(find project_localization)/param/project_localization_params.yaml" command="load" />
         <remap from="scan" to="$(arg scan_topic)"/>
     </node>
+        <node pkg="project_localization" type="project_localization_move.py" name="service_client" output="screen">
+    </node>
 </launch>
