@@ -3,9 +3,7 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /Global Options1
-        - /Map1/Status1
+      Expanded: ~
       Splitter Ratio: 0.5
     Tree Height: 439
   - Class: rviz/Selection
@@ -50,15 +48,35 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.699999988
-      Class: rviz/Map
-      Color Scheme: map
-      Draw Behind: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
       Enabled: true
-      Name: Map
-      Topic: /map
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 0
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.0500000007
+      Style: Flat Squares
+      Topic: /hokuyo_base/scan
       Unreliable: false
-      Use Timestamp: false
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
@@ -167,6 +185,8 @@ Visualization Manager:
           Value: true
         map:
           Value: true
+        nerf_cannon:
+          Value: true
         odom:
           Value: true
         orbbec_astra_depth_frame:
@@ -186,68 +206,133 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          odom:
-            base_footprint:
-              base_link:
-                back_left_wheel:
-                  {}
-                back_right_wheel:
-                  {}
-                front_left_wheel:
-                  {}
-                front_right_wheel:
-                  {}
-                gps_link:
-                  {}
-                hokuyo_base_link:
-                  {}
-                imu_link:
-                  {}
-                orbbec_astra_rgb_frame:
-                  orbbec_astra_depth_frame:
-                    orbbec_astra_depth_optical_frame:
-                      {}
-                  orbbec_astra_link:
+          {}
+        odom:
+          base_footprint:
+            base_link:
+              back_left_wheel:
+                {}
+              back_right_wheel:
+                {}
+              front_left_wheel:
+                {}
+              front_right_wheel:
+                {}
+              gps_link:
+                {}
+              hokuyo_base_link:
+                {}
+              imu_link:
+                {}
+              nerf_cannon:
+                {}
+              orbbec_astra_rgb_frame:
+                orbbec_astra_depth_frame:
+                  orbbec_astra_depth_optical_frame:
                     {}
-                  orbbec_astra_rgb_optical_frame:
-                    {}
+                orbbec_astra_link:
+                  {}
+                orbbec_astra_rgb_optical_frame:
+                  {}
       Update Interval: 0
       Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/LaserScan
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
+    - Alpha: 0.699999988
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
       Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 0
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: LaserScan
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.00999999978
-      Style: Flat Squares
-      Topic: /hokuyo_base/scan
+      Name: Map
+      Topic: /map
       Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
+      Use Timestamp: false
       Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        back_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        back_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gps_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hokuyo_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        orbbec_astra_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        orbbec_astra_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        orbbec_astra_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        orbbec_astra_rgb_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        orbbec_astra_rgb_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: RobotModel
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -268,25 +353,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 10
+      Distance: 35.8437958
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.54223758
+        Y: 0.752859831
+        Z: -0.894150615
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.785398006
+      Pitch: 0.675397933
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.785398006
+      Yaw: 1.63539755
     Saved: ~
 Window Geometry:
   Displays:
